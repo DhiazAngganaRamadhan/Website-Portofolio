@@ -105,7 +105,7 @@
     .grid { display: grid; gap: 16px; }
 
     .skills {
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 
     .card {
@@ -116,8 +116,113 @@
       padding: 16px;
     }
 
+    .skills .card {
+      position: relative;
+      padding: 24px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #020617, #020617) padding-box,
+                  linear-gradient(135deg, rgba(56,189,248,.5), rgba(14,165,233,.1)) border-box;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .skills .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(56,189,248,.15), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .skills .card:hover::before {
+      opacity: 1;
+    }
+
+    .skills .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(56,189,248,.15);
+    }
+
+    .skills h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #e0f2fe;
+    }
+
+    .skills p {
+      margin-bottom: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .skills-tags span {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(56,189,248,.1);
+      color: #bae6fd;
+      border: 1px solid rgba(56,189,248,.3);
+    }
+
     .projects {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .projects .card {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s ease;
+    }
+
+    .projects .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(135deg, transparent, rgba(56,189,248,.8), transparent);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .projects .card:hover {
+      transform: translateY(-8px);
+      box-shadow:
+        0 20px 40px rgba(56,189,248,.18),
+        inset 0 0 0 1px rgba(56,189,248,.25);
+    }
+
+    .projects .card:hover::before {
+      opacity: 1;
+    }
+
+    .projects .card::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 16px;
+      background: linear-gradient(120deg, transparent, #38bdf8, transparent);
+      opacity: 0;
+      animation: borderMove 2s linear infinite;
+    }
+
+    .projects .card:hover::after {
+      opacity: .6;
+    }
+
+    @keyframes borderMove {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
 
     .thumb {
@@ -265,11 +370,52 @@
 
 <section id="skills">
   <h2>Skills</h2>
+
   <div class="grid skills">
-    <div class="card"><h3>Languages</h3><p>HTML, CSS, PHP, JavaScript, Python, C#</p></div>
-    <div class="card"><h3>Frameworks</h3><p>Flask, Laravel</p></div>
-    <div class="card"><h3>Tools</h3><p>GitHub, MySQL, Unity</p></div>
-    <div class="card"><h3>Deployment</h3><p>GitHub Pages</p></div>
+
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Building responsive and modern web applications.</p>
+      <div class="skills-tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>PHP</span>
+        <span>JavaScript</span>
+        <span>Laravel</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Backend Development</h3>
+      <p>Creating server-side logic and RESTful APIs.</p>
+      <div class="skills-tags">
+        <span>PHP</span>
+        <span>Python</span>
+        <span>MySQL</span>
+        <span>Flask</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Game Development</h3>
+      <p>Developing 2D platformer games for desktop and mobile.</p>
+      <div class="skills-tags">
+        <span>Unity</span>
+        <span>C#</span>
+        <span>2D Platformer</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Tools & Deployment</h3>
+      <p>Version control and deployment tools.</p>
+      <div class="skills-tags">
+        <span>GitHub</span>
+        <span>Git</span>
+        <span>GitHub Pages</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
