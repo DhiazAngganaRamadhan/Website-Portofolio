@@ -309,3 +309,51 @@
       font-size: 28px;
       cursor: pointer;
     }
+
+    .github-btn {
+      display: grid;
+      grid-auto-flow: column;
+      place-content: center;
+      align-items: center;
+      gap: 8px;
+      
+      width: 100%;
+      max-width: 360px;
+      
+      padding: 12px 20px;
+      margin-top: 16px;
+      
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      
+      color: #e5e7eb;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      
+      transition: all 0.25s ease;
+    }
+      
+    .github-btn:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+      
+    .github-icon {
+      width: 20px;
+      height: 20px;
+      display: block;      /* 🔥 PENTING */
+      filter: invert(1);
+    }
+      
+    .github-text {
+      display: block;      /* 🔥 PENTING */
+      text-align: center;
+    }
+      
+    .github-wrapper {
+      display: flex;
+      justify-content: center;
+    }       
