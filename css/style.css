@@ -83,11 +83,11 @@
       transform: translateY(-2px);
     }
 
-    section {
-      padding: 56px 24px;
+    .section {
       max-width: 1100px;
-      margin: auto;
-    }
+      margin: 0 auto;
+      padding: 80px 24px;
+    }    
 
     .grid { display: grid; gap: 16px; }
 
@@ -321,7 +321,7 @@
       max-width: 360px;
       
       padding: 12px 20px;
-      margin-top: 16px;
+      margin-top: 5px;
       
       background: transparent;
       border: 1px solid rgba(255,255,255,0.2);
@@ -357,3 +357,81 @@
       display: flex;
       justify-content: center;
     }       
+
+    .cert-section {
+      padding: 100px 24px;
+      overflow: hidden;
+    }
+
+    .cert-wrapper {
+      overflow: hidden;
+    }
+
+    .cert-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      align-items: stretch;
+      animation: infiniteScroll 40s linear infinite;
+    }
+
+    .cert-card {
+      width: 280px;
+      min-height: 260px;
+
+      background: linear-gradient(145deg, #0a1a2f, #020c1b);
+      border-radius: 16px;
+      padding: 24px;
+
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .cert-org {
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .cert-year {
+      margin: 12px 0 auto;
+      color: #4fc3f7;
+      font-weight: 600;
+    }
+
+    .cert-btn {
+      align-self: flex-start;
+      margin-top: 16px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #020617;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cert-btn:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 0 20px rgba(56,189,248,0.6);
+    }
+
+    @keyframes infiniteScroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .cert-wrapper:hover .cert-track {
+      animation-play-state: paused;
+    }
