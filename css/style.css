@@ -84,16 +84,26 @@
     }
 
     .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 24px;
+      max-width: 1100px;   /* 🔥 ini kuncinya */
+      margin: 0 auto;      /* center */
+      padding: 100px 24px; /* jarak atas & samping */
+    }
+
+    .section h2 {
+      text-align: left;      /* rata kiri */
+      font-size: 24px;       /* ukuran normal seperti dulu */
+      font-weight: 600;
+      margin-bottom: 24px;   /* jarak ke konten */
+      color: #e5e7eb;
     }    
 
     .grid { display: grid; gap: 16px; }
 
     .skills {
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 🔥 paksa 4 kolom */
+      gap: 24px;
+    }      
 
     .card {
       background: linear-gradient(180deg, #020617, #020617) padding-box,
@@ -213,16 +223,6 @@
       100% { transform: translateX(100%); }
     }
 
-    .thumb {
-      height: 160px;
-      background: #020617;
-      border: 1px dashed #1f2937;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      color: var(--muted);
-    }
-
     .tags {
       display: flex;
       gap: 8px;
@@ -282,19 +282,27 @@
       background: rgba(0,0,0,0.7);
       backdrop-filter: blur(4px);
       z-index: 999;
-    }
+    
+      /* TAMBAHKAN */
+      justify-content: center;
+      align-items: center;
+    }    
 
     .modal-content {
       background: #020617;
-      max-width: 800px;
-      max-height: 80vh;       
-      overflow-y: auto;  
-      margin: 60px auto;
+      width: 90%;
+      max-width: 1000px;   /* 🔥 lebih lebar */
+      height: 85vh;        /* 🔥 tinggi kayak project */
+      
       padding: 24px;
-      border-radius: 16px;
+      border-radius: 18px;
       color: var(--text);
       position: relative;
-    }
+    
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;  
+    }    
 
     .modal-content img {
       width: 100%;
@@ -356,10 +364,9 @@
     .github-wrapper {
       display: flex;
       justify-content: center;
-    }       
+    }      
 
     .cert-section {
-      padding: 100px 24px;
       overflow: hidden;
     }
 
@@ -387,6 +394,9 @@
 
       display: flex;
       flex-direction: column;
+
+      transform: translateZ(0);
+      backface-visibility: hidden;
     }
 
     .cert-card h3 {
@@ -407,21 +417,47 @@
 
     .cert-btn {
       align-self: flex-start;
+      display: inline-block;
       margin-top: 16px;
       padding: 10px 18px;
       border-radius: 999px;
+    
       font-size: 13px;
       font-weight: 600;
       color: #020617;
       background: linear-gradient(135deg, #38bdf8, #0ea5e9);
       text-decoration: none;
-      transition: all 0.3s ease;
-    }
+    
+      border: none;
+      outline: none;
+      box-sizing: border-box;
+
+      cursor: pointer;
+    
+      /* Anti pecah / glitch */
+      backface-visibility: hidden;
+      will-change: transform, box-shadow;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }    
 
     .cert-btn:hover {
-      transform: translateY(-2px) scale(1.05);
-      box-shadow: 0 0 20px rgba(56,189,248,0.6);
-    }
+      box-shadow: 0 12px 30px rgba(56,189,248,0.35);
+    }    
+
+    .modal-cert {
+      width: 100%;
+      height: 100%;
+    }    
+    
+    .modal-cert iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      flex: 1;              /* 🔥 penting */
+    }      
 
     @keyframes infiniteScroll {
       from {
@@ -435,3 +471,15 @@
     .cert-wrapper:hover .cert-track {
       animation-play-state: paused;
     }
+
+    @media (max-width: 1024px) {
+      .skills {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .skills {
+        grid-template-columns: 1fr;
+      }
+    }    
