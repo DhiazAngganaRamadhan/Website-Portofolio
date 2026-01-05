@@ -247,12 +247,6 @@
       margin-bottom: 12px;
     }
 
-    footer {
-      padding: 40px 24px;
-      text-align: center;
-      color: var(--muted);
-    }
-
     @media (max-width: 768px) {
       .hero { grid-template-columns: 1fr; }
       h1 { font-size: 32px; }
@@ -481,5 +475,133 @@
     @media (max-width: 640px) {
       .skills {
         grid-template-columns: 1fr;
+      }
+    }    
+
+    .footer {
+      background: linear-gradient(180deg, #020617, #020c1b);
+      color: #cbd5f5;
+      margin-top: 0;
+      padding: 24px; 
+    }    
+    
+    /* GRID UTAMA FOOTER */
+    .footer-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1.8fr;
+      gap: 48px;
+    }    
+    
+    /* JUDUL */
+    .footer h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #e5e7eb;
+    }
+    
+    .footer h4 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: #93c5fd;
+    }
+    
+    /* ABOUT */
+    .footer-about p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #9ca3af;
+    }
+    
+    /* SOCIAL ICONS */
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+    }
+    
+    .footer-social img {
+      width: 18px;
+      height: 18px;
+      filter: invert(1);
+    }
+    
+    .footer-social a:hover {
+      background: #38bdf8;
+      transform: translateY(-3px);
+    }
+
+    .footer-links { 
+      text-align: left; 
+    }
+    
+    /* QUICK LINKS */
+    .footer-links a {
+      display: block;
+      color: #9ca3af;
+      margin-bottom: 10px;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-links a:hover {
+      color: #38bdf8;
+    }
+
+    .footer-contact {
+      text-align: left;
+    }    
+    
+    /* CONTACT */
+    .footer-contact .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    
+    .footer-contact img {
+      width: 18px;
+      height: 18px;
+      opacity: 0.85;
+    }
+    
+    .footer-contact a {
+      color: #9ca3af;
+    }
+    
+    .footer-contact a:hover {
+      color: #38bdf8;
+    }
+    
+    /* BOTTOM */
+    .footer-bottom {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
       }
     }    
