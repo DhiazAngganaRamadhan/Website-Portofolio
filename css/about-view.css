@@ -1,0 +1,290 @@
+.about-section,
+.assistant-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 90px 24px;
+
+  background: radial-gradient(circle at top, #020617, #020c1b);
+}
+
+.about-view,
+.assistant-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 32px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(6px);
+
+  transition: 0.3s ease;
+}
+
+.about-view:hover,
+.assistant-container:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1.3fr 1.7fr;
+  gap: 40px;
+}
+
+.img-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,.12);
+}
+
+.img-wrapper img {
+  width: 100%;
+  display: block;
+}
+
+.about-header,
+.education-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-header h2 {
+  font-size: 32px;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.wave,
+.education-title span {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.about-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+}
+
+.education-title {
+  margin: 22px 0 12px;
+  color: #93c5fd;
+}
+
+.education-cards {
+  display: grid;
+  gap: 12px;
+}
+
+.edu-card {
+  background: rgba(255,255,255,.06);
+  border-radius: 18px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.edu-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edu-card h4 {
+  font-size: 15px;
+  color: #e2e8f0;
+}
+
+.minor {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #93c5fd;
+}
+
+.tech-section {
+  padding: 120px 24px;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #020617, #020c1b);
+  text-align: center;
+}
+
+.tech-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.tech-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.tech-sub {
+  color: #94a3b8;
+  margin-bottom: 50px;
+}
+
+.tech-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.tech-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+
+  animation: techScroll 30s linear infinite;
+}
+
+.tech-track:hover {
+  animation-play-state: paused;
+}
+
+.tech-card {
+  min-width: 130px;     
+  flex-shrink: 0;
+
+  padding: 16px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-card img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.tech-card p {
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+/* hover effect */
+.tech-card:hover {
+  transform: translateY(1.05);
+  border-color: #38bdf8;
+  box-shadow: 0 0 25px rgba(56,189,248,.4);
+}
+
+@keyframes techScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.assistant-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.assistant-desc {
+  max-width: 720px;
+  margin: 24px auto 10px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd5e1;
+  text-align: center;
+}
+
+.assistant-header h2 {
+  font-size: 28px;
+  color: #38bdf8;
+}
+
+.assistant-header p {
+  max-width: 720px;
+  margin: auto;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.assistant-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.assistant-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.assistant-card h3 {
+  color: #93c5fd;
+  margin-bottom: 16px;
+}
+
+.assistant-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.assistant-card li {
+  padding-left: 20px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.assistant-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #38bdf8;
+}
+
+.assistant-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.assistant-gallery img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.assistant-note {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .about-container,
+  .assistant-content {
+    grid-template-columns: 1fr;
+  }
+}
