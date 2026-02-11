@@ -17,26 +17,81 @@
 
     a { color: var(--accent); text-decoration: none; }
 
-    header {
-      padding: 64px 24px;
+    .header {
+      padding: 80px 24px;
       max-width: 1100px;
       margin: auto;
     }
 
-    nav {
+    .header-nav {
       display: flex;
-      gap: 16px;
-      justify-content: flex-end;
-      margin-bottom: 32px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 60px;
     }
 
-    nav a { color: var(--muted); }
+    .logo {
+      font-weight: 700;
+      color: #38bdf8;
+    }
 
-    .hero {
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero-header {
       display: grid;
       grid-template-columns: 1.2fr .8fr;
-      gap: 24px;
+      gap: 48px;
       align-items: center;
+    }
+
+    .hero-left h1 {
+      font-size: 44px;
+      margin: 12px 0;
+    }
+
+    .accent-text {
+      color: var(--accent);
+    }
+
+    .hero-card {
+      text-align: center;
+      padding: 32px;
+      border-radius: 20px;
+
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 0 40px rgba(56,189,248,.15);
+
+      transition: .3s;
+    }
+
+    .hero-card:hover {
+      transform: translateY(-6px);
+    }
+
+    @media (max-width: 768px) {
+      .hero-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .cta {
+        justify-content: center;
+      }
     }
 
     .badge {
@@ -197,6 +252,13 @@
       transition: all 0.35s ease;
     }
 
+    .projects .card:hover {
+      transform: translateY(-8px);
+      box-shadow:
+      0 20px 40px rgba(56,189,248,.18),
+      inset 0 0 0 1px rgba(56,189,248,.25);
+    }
+    
     .projects .card::before {
       content: "";
       position: absolute;
@@ -207,13 +269,6 @@
       opacity: 0;
       transition: opacity 0.35s ease;
       pointer-events: none;
-    }
-
-    .projects .card:hover {
-      transform: translateY(-8px);
-      box-shadow:
-        0 20px 40px rgba(56,189,248,.18),
-        inset 0 0 0 1px rgba(56,189,248,.25);
     }
 
     .projects .card:hover::before {
@@ -235,9 +290,40 @@
       opacity: .6;
     }
 
-    @keyframes borderMove {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+    .thumb {
+      width: 100%;
+      height: 160px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      border: 1px dashed #1f2937;
+      position: relative;
+    }
+
+    .thumb::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+      );
+
+      transform: skewX(-25deg);
+      animation: shineMove 3.5s linear infinite;
+      pointer-events: none;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .tags {
@@ -263,28 +349,6 @@
       margin-bottom: 12px;
     }
 
-    @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; }
-      h1 { font-size: 32px; }
-      nav { justify-content: flex-start; }
-    }
-
-    .thumb {
-      width: 100%;
-      height: 160px;
-      border-radius: 12px;
-      overflow: hidden;        
-      margin-bottom: 12px;
-      border: 1px dashed #1f2937;
-    }
-
-    .thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;       
-      display: block;
-    }
-
     .modal {
       display: none;
       position: fixed;
@@ -292,31 +356,37 @@
       background: rgba(0,0,0,0.7);
       backdrop-filter: blur(4px);
       z-index: 999;
-    
+
       justify-content: center;
       align-items: center;
-    }    
+    }
 
     .modal-content {
       background: #020617;
       width: 90%;
-      max-width: 1000px;   
-      height: 85vh;        
-      
+      max-width: 1000px;
+      height: 85vh;
+
       padding: 24px;
       border-radius: 18px;
       color: var(--text);
+
       position: relative;
-    
+      overflow-y: auto;
+
       display: flex;
       flex-direction: column;
-      overflow-y: auto;  
-    }    
+    }
 
     .modal-content img {
       width: 100%;
       border-radius: 12px;
       margin: 16px 0;
+      transition: transform .35s ease;
+    }
+
+    .modal-content img:hover {
+      transform: scale(1.04);
     }
 
     .close {
@@ -327,53 +397,69 @@
       cursor: pointer;
     }
 
+    .github-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
     .github-btn {
       display: grid;
       grid-auto-flow: column;
       place-content: center;
       align-items: center;
       gap: 8px;
-      
+
       width: 100%;
       max-width: 360px;
-      
+
       padding: 12px 20px;
       margin-top: 5px;
-      
+
       background: transparent;
       border: 1px solid rgba(255,255,255,0.2);
       border-radius: 10px;
-      
+
       color: #e5e7eb;
       font-size: 15px;
       font-weight: 600;
       text-decoration: none;
-      
+
       transition: all 0.25s ease;
     }
-      
+
     .github-btn:hover {
       background: rgba(255,255,255,0.05);
       border-color: #38bdf8;
       color: #38bdf8;
     }
-      
+
     .github-icon {
       width: 20px;
       height: 20px;
-      display: block;     
+      display: block;
       filter: invert(1);
     }
-      
+
     .github-text {
-      display: block;      
+      display: block;
       text-align: center;
     }
-      
-    .github-wrapper {
-      display: flex;
-      justify-content: center;
-    }      
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+    }
+
+    @keyframes shineMove {
+      0%   { left: -120%; }
+      100% { left: 150%; }
+    }
+
+    @keyframes borderMove {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
 
     .cert-section {
       overflow: hidden;
