@@ -736,9 +736,10 @@
       }
     }    
 
-    /* ========================================
-   GLOBAL FIX (hilang scroll horizontal)
-======================================== */
+    /* =========================================
+   EXTRA RESPONSIVE FIX (WAJIB TERAKHIR)
+========================================= */
+
 html, body {
   overflow-x: hidden;
 }
@@ -748,37 +749,13 @@ img {
   height: auto;
 }
 
-
-/* ========================================
-   TABLET
-======================================== */
-@media (max-width: 1024px) {
-
-  .hero-header {
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .hero-card {
-    width: 100%;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-
-/* ========================================
-   MOBILE
-======================================== */
+/* navbar mobile rapih */
 @media (max-width: 768px) {
 
-  /* header */
   .header-nav {
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
+    text-align: center;
   }
 
   .nav-links {
@@ -786,33 +763,30 @@ img {
     justify-content: center;
   }
 
-  /* hero */
-  .hero-header {
-    flex-direction: column;
-    text-align: center;
+  /* hero spacing */
+  .header {
+    padding: 60px 16px;
   }
 
+  /* button CTA tengah */
+  .cta {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* profile image kecil */
   .profile-img {
     width: 110px;
     height: 110px;
   }
 
-  /* grid jadi 1 kolom */
-  .grid,
-  .projects,
-  .skills {
-    grid-template-columns: 1fr;
+  /* section padding lebih kecil */
+  .section {
+    padding: 70px 16px;
   }
 
-  /* modal */
-  .modal-content {
-    width: 95%;
-    height: 90vh;
-    padding: 16px;
+  /* card biar full width */
+  .card {
+    width: 100%;
   }
-
-  /* font */
-  h1 { font-size: 26px; }
-  h2 { font-size: 20px; }
-  p  { font-size: 14px; }
 }
