@@ -736,57 +736,47 @@
       }
     }    
 
-    /* =========================================
-   EXTRA RESPONSIVE FIX (WAJIB TERAKHIR)
-========================================= */
+    html, body {
+      overflow-x: hidden;
+    }
 
-html, body {
-  overflow-x: hidden;
-}
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+    @media (max-width: 768px) {
 
-/* navbar mobile rapih */
-@media (max-width: 768px) {
+      .header-nav {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
 
-  .header-nav {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-  }
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+      .header {
+        padding: 60px 16px;
+      }
 
-  /* hero spacing */
-  .header {
-    padding: 60px 16px;
-  }
+      .cta {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
 
-  /* button CTA tengah */
-  .cta {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+      .profile-img {
+        width: 110px;
+        height: 110px;
+      }
 
-  /* profile image kecil */
-  .profile-img {
-    width: 110px;
-    height: 110px;
-  }
+      .section {
+        padding: 70px 16px;
+      }
 
-  /* section padding lebih kecil */
-  .section {
-    padding: 70px 16px;
-  }
-
-  /* card biar full width */
-  .card {
-    width: 100%;
-  }
-}
+      .card {
+        width: 100%;
+      }
+    }

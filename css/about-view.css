@@ -295,3 +295,62 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+
+  .about-section,
+  .assistant-section,
+  .tech-section {
+    padding: 60px 18px;
+  }
+
+  .about-view,
+  .assistant-container {
+    padding: 20px;
+  }
+
+  .img-wrapper img {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .about-header h2,
+  .tech-title {
+    font-size: 24px;
+  }
+
+  .about-text,
+  .assistant-header p,
+  .assistant-desc {
+    font-size: 13px;
+  }
+
+  .education-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-back,
+  .btn-center {
+    display: block;
+    margin: 24px auto 0;
+    text-align: center;
+  }
+
+  .tech-card {
+    min-width: 100px;
+    padding: 12px;
+  }
+
+  .tech-card img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .assistant-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .assistant-gallery img {
+    height: 180px;
+  }
+}
