@@ -348,11 +348,18 @@
   
       <h2>Send Me a Message</h2>
   
-      <form action="send.php" method="POST" class="contact-form">
+      <form action="https://formspree.io/f/xyklwwkq" method="POST" class="contact-form">
+  
+        <input type="hidden" name="_subject" value="New Message from Portfolio">
+  
         <input type="text" name="name" placeholder="Your name" required>
+  
         <input type="email" name="email" placeholder="your@email.com" required>
+  
         <textarea name="message" placeholder="Your message..." required></textarea>
+  
         <button type="submit" class="btn primary">Send Message</button>
+  
       </form>
   
     </div>
